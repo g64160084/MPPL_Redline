@@ -57,7 +57,7 @@
       <div class="intro-text">
         <div class="intro-lead-in">Selamat Datang Di!</div>
         <div class="intro-heading text-uppercase">Redline Rental Services</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Sewa Mobil Sekarang!</a>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/sewa">Sewa Mobil Sekarang!</a>
       </div>
     </div>
   </header>

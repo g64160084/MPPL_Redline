@@ -58,45 +58,38 @@
       </div>
     </div>
   </header>
-
-  <!-- Services -->
-  <section class="page-section" id="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Services</h2>
-          <h3 class="section-subheading text-muted">Jaminan Layanan Services Layanan Kami.</h3>
-        </div>
+<div class="container">
+   <div class="intro-text">
+        <a href="#"><h3>Mobil Yang Ditawarkan</h3></a>
       </div>
-      <div class="row text-center">
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-car fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Kendaraan Prima</h4>
-          <p class="text-muted">Kami Menjamin Kendaraan Yang Disewakan Hanya Kendaraan Dengan Kondisi Terbaik Siap Menghadapi Berbagai Kondisi Di Jalan.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-money-bill-wave-alt fa-stack-1x fa-inverse"></i>
-          </span>
+       <table class="table" style="margin-top: 100px;margin-bottom: 100px;">
+        <?php $j=0; ?>
+        @foreach($data_sewa as $keys => $sewa)
+        <tr>
+          @for($i=0;$i<3;$i++)
+          <th>
+            <?php if($j>3) break; ?>
+            <div class="col-md-12">
+                  <div class="card h-100 nav-item" href="#">
+                    <img class="card-img-top" src="{{$data_sewa[$j]->urlimage}}" alt="" width="300" height="300">
+                    <div class="card-body">
+                      <h4 class="card-title">{{$data_sewa[$j]->nama_Kendaraan}}</h4>
+                       <h6 class="card-title">{{$data_sewa[$j]->kapasitas}} orang</h6>
+                        <h6 class="card-title">Rp. {{$data_sewa[$j]->harga}}</h6>
+                      <?php if($j<=3){$j++;} ?>
+                    </div>
+                  </div>
+                </div>
+          </th>
+          @endfor
+          <?php if($j>2) break; ?>
+        </tr>
+        @endforeach
+      </table>
 
-          <h4 class="service-heading">Harga Yang Bersahabat</h4>
-          <p class="text-muted">Kami Memberikan Penawaran Dengan Harga Terbaik Sesuai Dengan Kebutuhan Anda.</p>
-        </div>
-        <div class="col-md-4">
-          <span class="fa-stack fa-4x">
-            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading">Web Security</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+</div>
+ 
+ 
 
   <!-- Contact -->
   <section class="page-section" id="contact">

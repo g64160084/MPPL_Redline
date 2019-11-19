@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Sewa extends Migration
+class Penyewaan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class Sewa extends Migration
      */
     public function up()
     {
-        Schema::create('sewa', function (Blueprint $table) {
+        Schema::create('penyewaan', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_Kendaraan');
-            $table->string('kapasitas');
-            $table->string('harga');
-            $table->integer('id_rental');
-            $table->string('verifikasi');
-            $table->string('urlimage');
+            $table->string('nama');
+            $table->string('alamat');
             $table->timestamps();
-        });    }
+        });
+    }
 
     /**
      * Reverse the migrations.

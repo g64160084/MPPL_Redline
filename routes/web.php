@@ -50,3 +50,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/sewa', 'sewaController@index')->name('sewa');
+
+Auth::routes();
+
+Route::get('/penyewaan', 'penyewaanController@view')->name('penyewaan');
