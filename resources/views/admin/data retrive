@@ -1,0 +1,52 @@
+<div class="container">
+                    <table class="table table-hover">
+                      <tr>
+                        <th>Nama</th>
+                        <th>Loc</th>
+                        <th>City</th>
+                        <th>Lat</th>
+                        <th>Lang</th>
+                        <th>Temp</th>
+                        <th>Hum</th>
+                        <th>Wspeed</th>
+                        <th>Plant Name</th>
+                        <th>Plant Part</th>
+                        <th>Plant Loc</th>
+                        <th>Growth Level</th>
+                        <th>Image</th>
+                        <th></th>
+                      </tr>
+                      @foreach($data_opete as $opete)
+                      <tr>
+                        <th>{{$opete->nama}}</th>
+                        <th>{{$opete->loc}}</th>
+                        <th>{{$opete->city}}</th>
+                        <th>{{$opete->lat}}</th>
+                        <th>{{$opete->lang}}</th>
+                        <th>{{$opete->temp}}</th>
+                        <th>{{$opete->hum}}</th>
+                        <th>{{$opete->wspeed}}</th>
+                        <th>{{$opete->plant_name}}</th>
+                        <th>{{$opete->plant_part}}</th>
+                        <th>{{$opete->plant_loc}}</th>
+                        <th>{{$opete->growth_level}}</th>
+                        <th><img src="{{$opete->file}}" width="200" height="100"></th>
+                         @if($opete->status == 1)
+                          <th>
+                          <form action="praktikum/{{$opete->id}}/approve">
+                            <button type="submit" class="btn btn-warning">Approve</button> 
+                          </form>
+                        </th>
+                        @endif
+                        @if($opete->status == 2)
+                          <th>
+                          <form action="praktikum/{{$opete->id}}/cancel">
+                            <button type="submit" class="btn btn-success">Cancel</button> 
+                          </form>
+                        </th>
+                        @endif
+                        
+                      </tr>
+                      @endforeach
+                   </table>
+                </div>

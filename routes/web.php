@@ -54,3 +54,7 @@ Route::get('/sewa', 'sewaController@index')->name('sewa');
 Auth::routes();
 
 Route::get('/penyewaan', 'penyewaanController@view')->name('penyewaan');
+
+Auth::routes();
+
+Route::get('/admin', 'adminController@view')->name('admin');
