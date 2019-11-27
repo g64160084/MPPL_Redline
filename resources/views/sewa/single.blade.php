@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="utf-8">
@@ -10,7 +11,7 @@
   <title>Redline</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{URL::asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,10 +21,11 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
   <!-- Custom styles for this template -->
-  <link href="css/agency.min.css" rel="stylesheet">
+  <link href="{{URL::asset('css/agency.min.css')}}" rel="stylesheet">
 
 </head>
-    <body id="page-top">
+
+<body id="page-top">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -57,60 +59,37 @@
     </div>
   </header>
 
-
-  <div class="container">
-    @if(session('sukses'))
-    <div class="alert alert-success" role="alert">
-        Data Berhasil Ditambah!
-    </div>
-    @endif
-    <div class="row">
-    
-    </div>
-  </div>
-
-<div><br><br></div>
-
-  <div class="container" style="border-radius: 25px;background-color: rgba(163, 173, 160, 0.3);padding: 20px">
-    <div class="col-8">
-      <h1>Upload Data Mobil</h1>
+<div class="container">
+   <div class="intro-text">
+        <a href="#"><h3>Mobil Yang Ditawarkan</h3></a>
       </div>
-        <form action="/garage/tambah" method="POST" enctype="multipart/form-data">
-          {{method_field('POST')}}
-          {{@csrf_field()}}
-          <div class="form-group">
-            <label for="examplenama">Nama</label>
-            <input name="nama" type="text" class="form-control" id="examplenama" placeholder="Nama"  >    
-          </div>
-          <div class="form-group">
-            <label for="examplenama">Kapasitas</label>
-            <input name="kapasitas" type="text" class="form-control" id="examplenama" placeholder="kapasitas"  >    
-          </div>
-          <div class="form-group">
-            <label for="examplenama">Harga</label>
-            <input name="harga" type="text" class="form-control" id="examplenama" placeholder="harga"  >    
-          </div>
-          <div class="form-group">
-            <label for="examplenama">Detail</label>
-            <input name="verifikasi" type="text" class="form-control" id="examplenama" placeholder="verifikasi"  >    
-          </div>
-          <div class="form-group">
-            <b>File Gambar</b><br/>
-            <input type="file" name="file" class="form-control">
-          </div>
+      <table class="table" style="margin-top: 100px;margin-bottom: 100px;">
 
-            <div >
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
+   
+        <tr>
+          <td>
+            <div class="col-md-12">
+                  <div class="card h-100 nav-item" href="#">
+                    <img class="card-img-top" src="{{$detail_sewa->urlimage}}" alt="" width="300" height="300">
+                    <div class="card-body">
+                    <h5></h5>
+                      <h4 class="card-title"><a href="{{url('/sewa/$detail_sewa->id')}}"> {{$detail_sewa->nama_Kendaraan}} </a></h4>
+                       <h6 class="card-title">{{$detail_sewa->kapasitas}} orang</h6>
+                        <h6 class="card-title">Rp. {{$detail_sewa->harga}}</h6>
+                    </div>
+                  </div>
+                </div>
+          </td>
+        </tr>
+        
 
-        </form>
-      </div>
-    </div>
-  </div>
+      </table>
 
-  
+</div>
+ 
+ 
 
-   <!-- Contact -->
+  <!-- Contact -->
   <section class="page-section" id="contact">
     <div class="container">
       <div class="row">
@@ -196,22 +175,19 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{URL::asset('vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="{{URL::asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
   <!-- Contact form JavaScript -->
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
+  <script src="{{URL::asset('js/jqBootstrapValidation.js')}}"></script>
+  <script src="{{URL::asset('js/contact_me.js')}}"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/agency.min.js"></script>
+  <script src="{{URL::asset('js/agency.min.js')}}"></script>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-</html>
 
+</html>

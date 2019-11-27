@@ -70,7 +70,10 @@
           <th>
             <?php if($j>3) break; ?>
             <div class="col-md-12">
-                  <div class="card h-100 nav-item" href="#">
+                  <div class="card h-100 nav-item" href="{{url('sewa/$j')}}">
+
+<a href={{url("sewa/$j")}}>Detail</a>
+
                     <img class="card-img-top" src="{{$data_sewa[$j]->urlimage}}" alt="" width="300" height="300">
                     <div class="card-body">
                       <h4 class="card-title">{{$data_sewa[$j]->nama_Kendaraan}}</h4>

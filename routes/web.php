@@ -21,35 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
 Route::get('/sewa', 'sewaController@index')->name('sewa');
+
+Auth::routes();
 
 Route::get('/sewa/create', 'sewaController@create');
 
@@ -61,12 +35,26 @@ Auth::routes();
 
 Route::get('/admin', 'adminController@view')->name('admin');
 
+Auth::routes();
+
 Route::get('/admin/{id}/approve','adminController@approve');
+
+Auth::routes();
 
 Route::get('/admin/{id}/cancel','adminController@cancel');
 
+Auth::routes();
+
 Route::post('/penyewaan/create','penyewaanController@create');
 
-Route::get('/garage','penyewaanController@kendaraan');
+Auth::routes();
 
-Route::post('/garage/create','sewaController@create');
+Route::get('/garage','penyewaanController@kendaraan')->name('garage');
+
+Auth::routes();
+
+Route::post('/garage/tambah','sewaController@tambah');
+
+Auth::routes();
+
+Route::get('/sewa/{id}', 'sewaController@detail');

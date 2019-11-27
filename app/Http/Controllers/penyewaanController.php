@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Gambar;
 use Illuminate\Http\Request;
 use Illuminate\Http\auth;
 
@@ -32,5 +33,5 @@ class penyewaanController extends Controller
     	return redirect('/penyewaan')->with('sukses','Data Berhasil Ditambahkan!');
 
 
-    }
+    }    
 }
