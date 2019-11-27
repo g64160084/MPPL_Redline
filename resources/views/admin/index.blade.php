@@ -262,7 +262,7 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                  <h6 class="m-0 font-weight-bold text-primary">ACC Tempat Penyewaan</h6>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -280,20 +280,50 @@
                 <div class="container">
                     <table class="table table-hover">
                       <tr>
+                        <th>No</th>
+                        <th>ID_User</th>
                         <th>Nama</th>
-                        <th>Loc</th>
-                        <th>City</th>
-                        <th>Lat</th>
-                        <th>Lang</th>
-                        <th>Temp</th>
-                        <th>Hum</th>
-                        <th>Wspeed</th>
-                        <th>Plant Name</th>
-                        <th>Plant Part</th>
-                        <th>Plant Loc</th>
-                        <th>Growth Level</th>
-                        <th>Image</th>
+                        <th>Alamat</th>
+                        <th>Kontak</th>
+                        <th>Status</th>
                         <th></th>
+                      </tr>
+                      <tr>
+                        @foreach ($data_penyewaan as $sewa)
+                          <th>{{$sewa->id}}</th>
+                          <th>{{$sewa->id_user}}</th>
+                          <th>{{$sewa->nama}}</th>
+                          <th>{{$sewa->alamat}}</th>
+                          <th>{{$sewa->kontak}}</th>
+                          @if ($sewa->accepted == 0)
+                          <th>
+                          <div class="alert" style="background-color: #f44336;background: #da190b;color: white;" >
+                            Belum Di Approved
+                          </div>
+                          </th>
+                          
+                          <th>
+                            <form action="admin/{{$sewa->id}}/approve">
+                              <button type="submit" class="btn btn-warning">Approve</button> 
+                            </form>
+                          </th>
+                          @endif
+
+                          @if ($sewa->accepted == 1)
+                          <th>
+                          <div class="alert" style="background-color: #4CAF50;background: #46a049;color: white;" >
+                            Approved
+                          </div>
+                          </th>
+                          
+                          <th>
+                            <form action="admin/{{$sewa->id}}/cancel">
+                              <button type="submit" class="btn btn-success">Cancel Approveal</button> 
+                            </form>
+                          </th>
+                          @endif
+
+                        @endforeach
                       </tr>
                       
                    </table>

@@ -15,8 +15,11 @@ class Penyewaan extends Migration
     {
         Schema::create('penyewaan', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('id_user');
             $table->string('nama');
             $table->string('alamat');
+            $table->string('accepted');
+            $table->string('kontak');
             $table->timestamps();
         });
     }

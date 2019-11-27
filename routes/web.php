@@ -58,3 +58,9 @@ Route::get('/penyewaan', 'penyewaanController@view')->name('penyewaan');
 Auth::routes();
 
 Route::get('/admin', 'adminController@view')->name('admin');
+
+Route::get('/admin/{id}/approve','adminController@approve');
+
+Route::get('/admin/{id}/cancel','adminController@cancel');
+
+Route::post('/penyewaan/create','penyewaanController@create');

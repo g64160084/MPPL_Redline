@@ -71,21 +71,24 @@
 		<div class="col-8">
 			<h1>Upload Data Penyewaan</h1>
 			</div>
-				<form action="/praktikum/create" method="POST" enctype="multipart/form-data">
+				<form action="/penyewaan/create" method="POST" enctype="multipart/form-data">
 					{{method_field('POST')}}
 					{{@csrf_field()}}
 					<div class="form-group">
 						<label for="examplenama">Nama</label>
 						<input name="nama" type="text" class="form-control" id="examplenama" placeholder="Nama"  >		
 					</div>
-					<div class="form-group">
-						<label for="examplenama">Alamat</label>
-						<input name="Alamat" type="text" class="form-control" id="examplenama" placeholder="Alamat"  >		
-					</div>
+  				<div class="form-group">
+              <label for="examplenama">Alamat</label>
+              <input name="alamat" type="text" class="form-control" id="examplenama" placeholder="Loc"  >    
+          </div>
+          <div class="form-group">
+            <label for="examplenama">Kontak</label>
+            <input name="kontak" type="text" class="form-control" id="examplenama" placeholder="Kontak"  >    
+          </div>
 		   			<div >
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
-
 				</form>
 			</div>
 		</div>
