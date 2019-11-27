@@ -79,8 +79,24 @@
           {{ csrf_field() }}
  
           <div class="form-group">
+            <label for="examplenama">Nama</label>
+            <input name="nama" type="text" class="form-control" id="examplenama" placeholder="Nama"  >    
+          </div>
+          <div class="form-group">
+            <label for="examplenama">Kapasitas</label>
+            <input name="kapasitas" type="text" class="form-control" id="examplenama" placeholder="kapasitas"  >    
+          </div>
+          <div class="form-group">
+            <label for="examplenama">Harga</label>
+            <input name="harga" type="text" class="form-control" id="examplenama" placeholder="harga"  >    
+          </div>
+          <div class="form-group">
+            <label for="examplenama">Detail</label>
+            <input name="detail" type="text" class="form-control" id="examplenama" placeholder="verifikasi"  >    
+          </div>
+          <div class="form-group">
             <b>File Gambar</b><br/>
-            <input type="file" name="file">
+            <input type="file" name="file" class="form-control">
           </div>
  
           <input type="submit" value="Upload" class="btn btn-primary">

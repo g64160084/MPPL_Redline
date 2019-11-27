@@ -71,12 +71,9 @@
             <?php if($j>3) break; ?>
             <div class="col-md-12">
                   <div class="card h-100 nav-item" href="{{url('sewa/$j')}}">
-
-<a href={{url("sewa/$j")}}>Detail</a>
-
-                    <img class="card-img-top" src="{{$data_sewa[$j]->urlimage}}" alt="" width="300" height="300">
+                    <a href="{{url('sewa/$j')}}"><img class="card-img-top" src="{{$data_sewa[$j]->urlimage}}" alt="" width="300" height="300"></a>
                     <div class="card-body">
-                      <h4 class="card-title">{{$data_sewa[$j]->nama_Kendaraan}}</h4>
+                      <h4 class="card-title">{{$data_sewa[$j]->nama_kendaraan}}</h4>
                        <h6 class="card-title">{{$data_sewa[$j]->kapasitas}} orang</h6>
                         <h6 class="card-title">Rp. {{$data_sewa[$j]->harga}}</h6>
                       <?php if($j<=3){$j++;} ?>
