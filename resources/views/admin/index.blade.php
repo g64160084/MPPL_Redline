@@ -29,7 +29,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('admin') }}">
         <div class="sidebar-brand-icon rotate-n-15">
         </div>
         <div class="sidebar-brand-text mx-3">Admin</div>
@@ -40,7 +40,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('home') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -49,12 +49,12 @@
       <hr class="sidebar-divider">
 
       <!-- Heading -->
-      <div class="sidebar-heading">
+      <!-- <div class="sidebar-heading">
         Interface
-      </div>
+      </div> -->
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Components</span>
@@ -66,10 +66,10 @@
             <a class="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Utilities</span>
@@ -83,7 +83,7 @@
             <a class="collapse-item" href="utilities-other.html">Other</a>
           </div>
         </div>
-      </li>
+      </li> -->
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -102,38 +102,38 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
+            <a class="collapse-item" href="{{url('home')}}">Home</a>
+            <!-- <a class="collapse-item" href="{{url('register')}}">Register</a>
+            <a class="collapse-item" href="forgot-password.html">Forgot Password</a> -->
+            <!-- <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
             <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
+            <a class="collapse-item" href="blank.html">Blank Page</a> -->
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Tables -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="tables.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
-      </li>
+      </li> -->
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
       <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
+      <!-- <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
+      </div> -->
 
     </ul>
     <!-- End of Sidebar -->
@@ -153,7 +153,7 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -162,7 +162,7 @@
                 </button>
               </div>
             </div>
-          </form>
+          </form> -->
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -199,22 +199,21 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <!-- <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
-                </a>
-                <a class="dropdown-item" href="#">
+                </a> -->
+                <!-- <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
-                </a>
-                <a class="dropdown-item" href="#">
+                </a> -->
+                <!-- <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
-                </a>
+                </a> -->
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
                 </a>
               </div>
             </li>
@@ -230,7 +229,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
           </div>
 
           <!-- Content Row -->
@@ -242,7 +241,15 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      <?php $j=0; ?> 
+                      @foreach ($data_penyewaan as $sewa)
+                      @if ($sewa->accepted == 0)
+                      <?php $j++; ?> 
+                      @endif
+                      @endforeach
+                      {{$j}}
+                      </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -288,43 +295,45 @@
                         <th>Status</th>
                         <th></th>
                       </tr>
+                      @foreach ($data_penyewaan as $sewa)
                       <tr>
-                        @foreach ($data_penyewaan as $sewa)
-                          <th>{{$sewa->id}}</th>
-                          <th>{{$sewa->id_user}}</th>
-                          <th>{{$sewa->nama}}</th>
-                          <th>{{$sewa->alamat}}</th>
-                          <th>{{$sewa->kontak}}</th>
+                        
+                          <td>{{$sewa->id}}</td>
+                          <td>{{$sewa->id_user}}</td>
+                          <td>{{$sewa->nama}}</td>
+                          <td>{{$sewa->alamat}}</td>
+                          <td>{{$sewa->kontak}}</td>
                           @if ($sewa->accepted == 0)
-                          <th>
+                          <td>
                           <div class="alert" style="background-color: #f44336;background: #da190b;color: white;" >
                             Belum Di Approved
                           </div>
-                          </th>
+                          </td>
                           
-                          <th>
-                            <form action="admin/{{$sewa->id}}/approve">
+                          <td>
+                            <form action="admin/{{$sewa->id}}/{{$sewa->id_user}}/approve">
                               <button type="submit" class="btn btn-warning">Approve</button> 
                             </form>
-                          </th>
+                          </td>
                           @endif
 
                           @if ($sewa->accepted == 1)
-                          <th>
+                          <td>
                           <div class="alert" style="background-color: #4CAF50;background: #46a049;color: white;" >
                             Approved
                           </div>
-                          </th>
+                          </td>
                           
-                          <th>
+                          <td>
                             <form action="admin/{{$sewa->id}}/cancel">
                               <button type="submit" class="btn btn-success">Cancel Approveal</button> 
                             </form>
-                          </th>
+                          </td>
                           @endif
 
-                        @endforeach
+                        
                       </tr>
+                      @endforeach
                       
                    </table>
                 </div>
@@ -341,7 +350,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Tani Center 2019</span>
+            <span>Copyright &copy; 2019</span>
           </div>
         </div>
       </footer>
@@ -359,7 +368,7 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -375,7 +384,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>

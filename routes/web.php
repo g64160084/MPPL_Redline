@@ -29,19 +29,19 @@ Route::get('/sewa/create', 'sewaController@create');
 
 Auth::routes();
 
-Route::get('/penyewaan', 'penyewaanController@view')->name('penyewaan');
+Route::get('/penyewaan', 'penyewaanController@view')->middleware('userbiasa');
 
 Auth::routes();
 
-Route::get('/admin', 'adminController@view')->name('admin');
+Route::get('/admin', 'adminController@view')->middleware('admin');
 
 Auth::routes();
 
-Route::get('/admin/{id}/approve','adminController@approve');
+Route::get('/admin/{id}/{uid}/approve','adminController@approve')->middleware('admin');
 
 Auth::routes();
 
-Route::get('/admin/{id}/cancel','adminController@cancel');
+Route::get('/admin/{id}/cancel','adminController@cancel')->middleware('admin');
 
 Auth::routes();
 
@@ -49,7 +49,7 @@ Route::post('/penyewaan/create','penyewaanController@create');
 
 Auth::routes();
 
-Route::get('/garage','penyewaanDashboardController@view')->name('garage');
+Route::get('/garage','penyewaanDashboardController@view')->middleware('penyewa');
 
 Auth::routes();
 
@@ -58,3 +58,6 @@ Route::post('/garage/create','penyewaanDashboardController@create');
 Auth::routes();
 
 Route::get('/sewa/{id}', 'sewaController@detail');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

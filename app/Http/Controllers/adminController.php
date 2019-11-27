@@ -13,10 +13,12 @@ class adminController extends Controller
     }
 
 
-    public function approve($id)
+    public function approve($id,$uid)
     {
         $approve = \App\Penyewaan::find($id);
+        $useracc = \App\User::find($uid);
         $approve->update(['accepted'=>'1']);
+        $useracc->update(['status'=>'penyewa']);
         return redirect('/admin')->with('sukses','Data Berhasil Di Approve!');
     }
 
