@@ -15,11 +15,11 @@ class Sewa extends Migration
     {
         Schema::create('sewa', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_Kendaraan');
+            $table->string('nama_kendaraan');
             $table->string('kapasitas');
             $table->string('harga');
-            $table->integer('id_rental');
-            $table->string('verifikasi');
+            $table->string('id_rental');
+            $table->string('detail');
             $table->string('urlimage');
             $table->timestamps();
         });    }
@@ -31,6 +31,6 @@ class Sewa extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('sewa');
     }
 }

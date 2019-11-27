@@ -15,11 +15,6 @@ class penyewaanController extends Controller
     	return view('penyewaan.index');
     }
 
-        public function kendaraan()
-    {
-        return view('penyewaan.kendaraan');
-    }
-
     public function create(Request $request)
     {   
     	$usernya = auth()->user()->id;
@@ -33,5 +28,6 @@ class penyewaanController extends Controller
     	return redirect('/penyewaan')->with('sukses','Data Berhasil Ditambahkan!');
 
 
-    }    
+    } 
+
 }

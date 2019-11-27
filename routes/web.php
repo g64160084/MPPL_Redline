@@ -49,11 +49,11 @@ Route::post('/penyewaan/create','penyewaanController@create');
 
 Auth::routes();
 
-Route::get('/garage','penyewaanController@kendaraan')->name('garage');
+Route::get('/garage','penyewaanDashboardController@view')->name('garage');
 
 Auth::routes();
 
-Route::post('/garage/tambah','sewaController@tambah');
+Route::post('/garage/create','penyewaanDashboardController@create');
 
 Auth::routes();
 

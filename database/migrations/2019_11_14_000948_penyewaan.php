@@ -31,6 +31,6 @@ class Penyewaan extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('penyewaan');
     }
 }

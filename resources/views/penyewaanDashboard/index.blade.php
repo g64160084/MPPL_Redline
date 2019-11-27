@@ -75,34 +75,15 @@
     <div class="col-8">
       <h1>Upload Data Mobil</h1>
       </div>
-        <form action="/garage/tambah" method="POST" enctype="multipart/form-data">
-          {{method_field('POST')}}
-          {{@csrf_field()}}
-          <div class="form-group">
-            <label for="examplenama">Nama</label>
-            <input name="nama" type="text" class="form-control" id="examplenama" placeholder="Nama"  >    
-          </div>
-          <div class="form-group">
-            <label for="examplenama">Kapasitas</label>
-            <input name="kapasitas" type="text" class="form-control" id="examplenama" placeholder="kapasitas"  >    
-          </div>
-          <div class="form-group">
-            <label for="examplenama">Harga</label>
-            <input name="harga" type="text" class="form-control" id="examplenama" placeholder="harga"  >    
-          </div>
-          <div class="form-group">
-            <label for="examplenama">Detail</label>
-            <input name="verifikasi" type="text" class="form-control" id="examplenama" placeholder="verifikasi"  >    
-          </div>
+        <form action="garage/create" method="POST" enctype="multipart/form-data">
+          {{ csrf_field() }}
+ 
           <div class="form-group">
             <b>File Gambar</b><br/>
-            <input type="file" name="file" class="form-control">
+            <input type="file" name="file">
           </div>
-
-            <div >
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-
+ 
+          <input type="submit" value="Upload" class="btn btn-primary">
         </form>
       </div>
     </div>
