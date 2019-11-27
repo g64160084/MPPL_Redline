@@ -14,6 +14,11 @@ class penyewaanController extends Controller
     	return view('penyewaan.index');
     }
 
+        public function kendaraan()
+    {
+        return view('penyewaan.kendaraan');
+    }
+
     public function create(Request $request)
     {   
     	$usernya = auth()->user()->id;

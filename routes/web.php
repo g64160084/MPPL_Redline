@@ -51,6 +51,8 @@ Auth::routes();
 
 Route::get('/sewa', 'sewaController@index')->name('sewa');
 
+Route::get('/sewa/create', 'sewaController@create');
+
 Auth::routes();
 
 Route::get('/penyewaan', 'penyewaanController@view')->name('penyewaan');
@@ -64,3 +66,7 @@ Route::get('/admin/{id}/approve','adminController@approve');
 Route::get('/admin/{id}/cancel','adminController@cancel');
 
 Route::post('/penyewaan/create','penyewaanController@create');
+
+Route::get('/garage','penyewaanController@kendaraan');
+
+Route::post('/garage/create','sewaController@create');
